@@ -1,4 +1,15 @@
-## 2013 - Spectral Networks and Locally Connected Networks on Graphs - [Bruna et al. 2017](http://arxiv.org/abs/1312.6203)
+## 2013 - Spectral Networks and Locally Connected Networks on Graphs - [Bruna et al. 2017](http://arxiv.org/abs/1312.6203) 
+youtube talk - https://www.youtube.com/watch?v=xk17mfFxkag
+ bullet points after the video talk - 
+ - Exploits the spectral nature of convolutions in the Fourier domain in order to define the graph spectral definition as ( convolution in the fourier domain is simply the diagonal operation): $x*h = F^{-1} diag(Fh) * Fx$
+where $ K_{k,l} = exp(\frac{{-2\pi(k\cdot l)}}{N^d}) $
+
+ - Convolution on graph is a Linear operator
+ - $x*_{G}h: = Vdiag(h)V^Tx$  where x is the graph and $h$ the operator
+ -  Localized kernel derive smoother fourier representation, therefore they induced smoother kernels by a $\kappa$ interpolation kernel with restricted spatial support s.t. $h = \kappa \cdot \tilde{h}$
+ - Fact is that smoothness requires similarity between eigenvectors of the Laplacian, therefore a 1D extension of the graph is developed (this is an open problem. Extend after full article review)
+
+
 
 
 ![alt text](https://github.com/NoamGit/paper_reviews/blob/master/graphs/pictures/Screenshot%20from%202017-05-20%2014-33-10.png)
