@@ -1,7 +1,15 @@
 ## 2013 - Spectral Networks and Locally Connected Networks on Graphs - [Bruna et al. 2017](http://arxiv.org/abs/1312.6203) 
-youtube talk - https://www.youtube.com/watch?v=xk17mfFxkag
- bullet points after the video talk - 
- - Exploits the spectral nature of convolutions in the Fourier domain in order to define the graph spectral definition as ( convolution in the fourier domain is simply the diagonal operation): $x*h = F^{-1} diag(Fh) * Fx$
+[youtube talk](https://www.youtube.com/watch?v=xk17mfFxkag)
+ 
+Defines 2 resolutions to look on convolutions on graphs -
+
+**Spatial reconstruction** - 
+Views convolutions as hierarcical local receptive fields (_see Adam Coates and Andrew Y Ng. Selecting receptive fields in deep networks 2011_). This analysis assumes that we are dealing with local neighberhoods $S$, that are obtained by thresholding the parent graph. A key point is to use multiscale clustering (such as dyadic clustering) for pooling and subsampling the graphs.
+This type of construction benefints for requiring less assumptions (such as regularity). However it is claimed to be naive and to not allow weight sharing across different locations in the graph
+
+**Spectral construction** - 
+The global graph structure is used togheter with its graph-Laplacian to generalize the convolution operator.
+Exploits the spectral nature of convolutions in the Fourier domain in order to define the graph spectral definition as ( convolution in the fourier domain is simply the diagonal operation): $x*h = F^{-1} diag(Fh) * Fx$
 where $ K_{k,l} = exp(\frac{{-2\pi(k\cdot l)}}{N^d}) $
 
  - Convolution on graph is a Linear operator
