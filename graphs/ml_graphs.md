@@ -1,4 +1,4 @@
-## 2013 - Spectral Networks and Locally Connected Networks on Graphs - [Bruna et al. 2017](http://arxiv.org/abs/1312.6203) 
+## 2013 - Spectral Networks and Locally Connected Networks on Graphs - [Bruna et al. 2013](http://arxiv.org/abs/1312.6203) 
 [youtube talk](https://www.youtube.com/watch?v=xk17mfFxkag)
  
 Defines 2 resolutions to look on convolutions on graphs -
