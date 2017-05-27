@@ -22,9 +22,9 @@ The issue of non-compact support of the filters in Fourier domain (F-domain), is
 Fact is that smoothness requires similarity between eigenvectors of the Laplacian, therefore a 1D extension of the graph is developed (this is an open problem.Also, this part is the most vague/unclear concept in the paper.)
  
 important sources and background material -
-- _ee Adam Coates and Andrew Y Ng. Selecting receptive fields in deep networks 2011_
+- _Adam Coates and Andrew Y Ng. Selecting receptive fields in deep networks 2011_
 - _Raif M. Rustamov and Leonidas Guibas. Wavelets on graphs via deep learning. In NIPS, 2013_
-- _F. R. K. Chung. Spectral Graph Theory. American Mathematical Society, _
+- _F. R. K. Chung. Spectral Graph Theory. American Mathematical Society_
 - _U. von Luxburg. A tutorial on spectral clustering. Technical Report 149, 08 2006._
 - _Matan Gavish, Boaz Nadler, and Ronald R. Coifman. Multiscale wavelets on trees, graphs
 and high dimensional data: Theory and applications to semi supervised learning. In Johannes
