@@ -2,22 +2,33 @@
 [youtube talk](https://www.youtube.com/watch?v=xk17mfFxkag)
  
 Defines 2 resolutions to look on convolutions on graphs -
-
+ 
 **Spatial reconstruction** - 
-Views convolutions as hierarcical local receptive fields (_see Adam Coates and Andrew Y Ng. Selecting receptive fields in deep networks 2011_). This analysis assumes that we are dealing with local neighberhoods $S$, that are obtained by thresholding the parent graph. A key point is to use multiscale clustering (such as dyadic clustering) for pooling and subsampling the graphs.
-This type of construction benefints for requiring less assumptions (such as regularity). However it is claimed to be naive and to not allow weight sharing across different locations in the graph
-
+The authors view convolutions as hierarchical local receptive fields. This analysis assumes that we are dealing with local neighborhood $S$, that are obtained by thresholding the parent graph. A key point is to use multiscale clustering (such as dyadic clustering) for pooling and subsampling the graphs.
+This type of construction benefits for requiring less assumptions (such as graph regularity). However it is claimed to be naive and not allow weight sharing across different locations in the graph
+ 
 **Spectral construction** - 
-The global graph structure is used togheter with its graph-Laplacian to generalize the convolution operator.
+The global graph structure is used together with its graph-Laplacian to generalize the convolution operator.
 Exploits the spectral nature of convolutions in the Fourier domain in order to define the graph spectral definition as ( convolution in the fourier domain is simply the diagonal operation): $x*h = F^{-1} diag(Fh) * Fx$
 where $ K_{k,l} = exp(\frac{{-2\pi(k\cdot l)}}{N^d}) $
-
- - Convolution on graph is a Linear operator
- - $x*_{G}h: = Vdiag(h)V^Tx$  where x is the graph and $h$ the operator
- -  Localized kernel derive smoother fourier representation, therefore they induced smoother kernels by a $\kappa$ interpolation kernel with restricted spatial support s.t. $h = \kappa \cdot \tilde{h}$
- - Fact is that smoothness requires similarity between eigenvectors of the Laplacian, therefore a 1D extension of the graph is developed (this is an open problem. Extend after full article review)
-
-
+ 
+The concept of convolution on graph is defined as:
+![alt text](https://github.com/NoamGit/paper_reviews/blob/master/graphs/pictures/image.png)
+CNNs are referred as using the covariance operator (which is diagonalized by the Fourier basis) as the similarity kernel.
+Convolution on graph is a Linear operator which can be formulated as:
+ $x*_{G}h: = Vdiag(h)V^Tx$  where x is the graph and $h$ the operator
+ 
+The issue of non-compact support of the filters in Fourier domain (F-domain), is a computational burden, as the decay of a function in the Euclidian domain is translated into smoothness in the F-domain. Localized kernel derive smoother Fourier representation, therefore they induce smoother kernels by a $\kappa$ interpolation kernel with restricted spatial support s.t. $h = \kappa \cdot \tilde{h}$
+Fact is that smoothness requires similarity between eigenvectors of the Laplacian, therefore a 1D extension of the graph is developed (this is an open problem.Also, this part is the most vague/unclear concept in the paper.)
+ 
+important sources and background material -
+- _ee Adam Coates and Andrew Y Ng. Selecting receptive fields in deep networks 2011_
+- _Raif M. Rustamov and Leonidas Guibas. Wavelets on graphs via deep learning. In NIPS, 2013_
+- _F. R. K. Chung. Spectral Graph Theory. American Mathematical Society, _
+- _U. von Luxburg. A tutorial on spectral clustering. Technical Report 149, 08 2006._
+- _Matan Gavish, Boaz Nadler, and Ronald R. Coifman. Multiscale wavelets on trees, graphs
+and high dimensional data: Theory and applications to semi supervised learning. In Johannes
+Frankranz and Thorsten Joachims, editors, ICML, pages 367–374, 2010._
 
 
 ![alt text](https://github.com/NoamGit/paper_reviews/blob/master/graphs/pictures/Screenshot%20from%202017-05-20%2014-33-10.png)
