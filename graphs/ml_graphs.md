@@ -1,3 +1,31 @@
+## 2017 - Inductive Representation Learning on Large Graphs - [Hamilton et al. 2017](https://arxiv.org/pdf/1706.02216) 
+
+Mainly concerns on the transductive/inductive approach. Inductive approaches enable greater generalization power and evolving graph setting, while transductive are a term of inference that rely on specific examples for predicting specific type of outcome.
+
+![alt text](https://github.com/NoamGit/paper_reviews/blob/master/graphs/pictures/inductive_1.png)
+
+The evolution concept is manifested in a feature aggregation procedure (see figure above). Compared to other approaches, the writers claim to use feature information in order to train the model for unseen nodes. The study focuses on creating generating useful representations for individual nodes.
+
+
+### The proposed method
+
+![alt text](https://github.com/NoamGit/paper_reviews/blob/master/graphs/pictures/inductive_2.png)
+The h denotes the representation of a node.line 5 is the neural structure and AGGREGATE can be any of many possible aggregation functions (such as Mean-aggragator, LSTM aggregator and Pooling aggregator).
+The connection to the Weisfeiler-Lehman Isomorphism test provides theoretical context for learning structure of node neighborhood. 
+ 
+### Experiment- Reddit posts classification
+
+Baselines – random classifier, logistic classifier (no graph structure).Reddit  task - predict which community different Reddit posts belong to. Data description - "In total this dataset contains 232,965 posts with an average degree of 492. We use the first 20 days for training and the remaining days for testing (with 30% used for validation)." 
+They found out that K=2 (2-link subgraph neighborhood) gave a 10-15% boost in accuracy compared to K=1, however raising K >2 only 
+ 
+### Theoretical justification
+
+They show that their Algorithm is capable of approximating clustering coefficients to an arbitrary degree of precision. 
+The basic idea behind the proof is that if each node has a unique feature representation, then we can learn to map nodes to indicator vectors and identify node neighborhoods
+
+
+
+
 ## 2013 - Spectral Networks and Locally Connected Networks on Graphs - [Bruna et al. 2013](http://arxiv.org/abs/1312.6203) 
 [youtube talk](https://www.youtube.com/watch?v=xk17mfFxkag)
  
@@ -12,6 +40,7 @@ The global graph structure is used together with its graph-Laplacian to generali
 Exploits the spectral nature of convolutions in the Fourier domain in order to define the graph spectral definition as ( convolution in the fourier domain is simply the diagonal operation): $x*h = F^{-1} diag(Fh) * Fx$
 where $ K_{k,l} = exp(\frac{{-2\pi(k\cdot l)}}{N^d}) $
  
+### convolution on graph
 The concept of convolution on graph is defined as:
 ![alt text](https://github.com/NoamGit/paper_reviews/blob/master/graphs/pictures/image.png)
 CNNs are referred as using the covariance operator (which is diagonalized by the Fourier basis) as the similarity kernel.
@@ -21,7 +50,7 @@ Convolution on graph is a Linear operator which can be formulated as:
 The issue of non-compact support of the filters in Fourier domain (F-domain), is a computational burden, as the decay of a function in the Euclidian domain is translated into smoothness in the F-domain. Localized kernel derive smoother Fourier representation, therefore they induce smoother kernels by a $\kappa$ interpolation kernel with restricted spatial support s.t. $h = \kappa \cdot \tilde{h}$
 Fact is that smoothness requires similarity between eigenvectors of the Laplacian, therefore a 1D extension of the graph is developed (this is an open problem.Also, this part is the most vague/unclear concept in the paper.)
  
-important sources and background material -
+### important sources and background material -
 - _Adam Coates and Andrew Y Ng. Selecting receptive fields in deep networks 2011_
 - _Raif M. Rustamov and Leonidas Guibas. Wavelets on graphs via deep learning. In NIPS, 2013_
 - _F. R. K. Chung. Spectral Graph Theory. American Mathematical Society_
@@ -32,6 +61,9 @@ Frankranz and Thorsten Joachims, editors, ICML, pages 367–374, 2010._
 
 
 ![alt text](https://github.com/NoamGit/paper_reviews/blob/master/graphs/pictures/Screenshot%20from%202017-05-20%2014-33-10.png)
+
+
+
 
 ## 2017 - Convolutional Neural Networks on Graphs with Fast Localized Spectral Filtering - [Defferrard et al. 2017](http://arxiv.org/abs/1606.09375)
 
