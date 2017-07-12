@@ -1,4 +1,5 @@
 ## 2017 - Inductive Representation Learning on Large Graphs - [Hamilton et al. 2017](https://arxiv.org/pdf/1706.02216) 
+[code and project page](http://snap.stanford.edu/graphsage/)
 
 Mainly concerns on the transductive/inductive approach. Inductive approaches enable greater generalization power and evolving graph setting, while transductive are a term of inference that rely on specific examples for predicting specific type of outcome.
 
