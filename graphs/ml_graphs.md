@@ -1,3 +1,37 @@
+## 2016 - Deep Neural Networks for Learning Graph Representations (DNGR) - [Cao et al. 2016](https://www.aaai.org/ocs/index.php/AAAI/AAAI16/paper/download/12423/11715) 
+
+### Key points from abstract
+- Learning graph feature representation from structural info.  
+- Uses random surfing model instead of random walks. Incoporates Stacked denoising autoencoders for compression. 
+- Provide analytical perspective to the objective function using the PMI matrix 
+
+### Main contributions
+1. DNNs have advantages in capturing non-linear information conveyed by graph, as opposed from linear dimensionality reduction techniques. 
+2. Novel DNGR model has better empirical results in learning low dimensional vertex representations of weighted graphs. 
+
+### Background
+DeepWalk can be understood as sequencing the graph structure as a collection of linear structures (of vertexes).  
+The authors are inspired by Levy & Goldberg's PPMI matrix factorization interpretation to W2V, and argue that using DNN instead of the linear truncated-SVD can be better for graph ML tasks.
+Cons of sequence sampling methods – hyperparameter choosing and finite length of sequences. 
+ 
+### The proposed method
+"First, we introduce random surfing model (Sec 3.1) to capture graph structural information and generate a probabilistic co-occurrence matrix. Next we calculate the PPMI matrix based on our probabilistic co-occurrence matrix by following (Bullinaria and Levy 2007) (See Sec 2.3). After that, a stacked denoising autoen- coder (Sec 3.2) is used to learn low-dimensional vertex rep- resentations. 
+
+![alt text](https://github.com/NoamGit/paper_reviews/blob/master/graphs/pictures/image.png)
+
+**Notion of surfing** – For vertex i they define a vector $p_k$ that defines the probability of reaching the j vertex after k steps. The random surfing model has also a restart probability s.t. we have $1-\alpha$ to return to vertex 0. The explicit eq ![alt text](https://github.com/NoamGit/paper_reviews/blob/master/graphs/pictures/Screenshot%20from%202017-08-12%2017-32-41.png)
+The main idea is that we have a transition matrix with probabilities, and non linear weighting s.t a node is defined by 
+
+![alt text](https://github.com/NoamGit/paper_reviews/blob/master/graphs/pictures/Screenshot%20from%202017-08-12%2017-52-24.png)
+I am not sure about the representation of the i-th vertex using r notation (very bad explanation and notations, probably the word representation as described in the SVD section).
+ 
+**Stacked denoising autoencoders (SDAE) for compression** - Used SDAE for compressing vertex representation in a non-linear fashion. The stacked denoising part is by masking random parts of the input vector to zero, and by that modeling missing entries. The method is described to be more efficient than SVD as the inference time is linear in the number of vertices. 
+
+*Results* -
+Provided results doesn't seem be very convincing, and are unrelated to our task.
+
+
+
 ## 2017 - Inductive Representation Learning on Large Graphs - [Hamilton et al. 2017](https://arxiv.org/pdf/1706.02216) 
 [code and project page](http://snap.stanford.edu/graphsage/)
 
