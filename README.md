@@ -5,3 +5,4 @@ Summerization of read paper
 - Spectral Networks and Locally Connected Networks on Graphs - Bruna et al. 2017
 - Convolutional Neural Networks on Graphs with Fast Localized Spectral Filtering - Defferrard et al. 2017
 - Inductive Representation Learning on Large Graphs - Hamilton et al. 2017
+- Deep Neural Networks for Learning Graph Representations (DNGR) - Cao et al. 2016
