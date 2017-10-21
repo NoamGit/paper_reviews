@@ -1,3 +1,29 @@
+
+## 2015 - Convolutional Networks on Graphs for Learning Molecular Fingerprints- [Duvenaud et. al. 2015](http://papers.nips.cc/paper/5954-convolutional-networks-on-graphs-for-learning-molecular-fingerprints.pdf)
+A novel molecular embedding approach.
+
+### Intro
+In the field of molecule feature extraction, data embeddings shouldn't always come in fixed size embeddings. In the proposed graph method **vertices** are individual atoms and edges are bonds. This approach overcomes:
+
+* machine-optimized fingerprints instead of fixed sized vectors
+* Differentiable fingerprints can be optimized to encode only relevant features.
+* similarity between fingerprint fragments
+
+![illustration](/home/noam/Pictures/paper_images/duvenaud) 
+
+### Algorithm
+Generalized the circular fingerprint algorithm by replacing the **Hashing** with an single layer NN and **indexing** with a softmax in order to  convert an arbitrary-sized graph into a fixed-sized vector. In essence, each atom is asked to classify itself as belonging to a single category and the sum of the labels produces the final fingerprint. **Canonicalization**, or neighborhood invariance, was achieved with summation.
+There are similarities between the circular fingerprint algo and the neural one as $tanh$ can be interpreted as a hashing mechanism (with large inputs) and the sofmax and argmax as indexing.
+
+![](/home/noam/Pictures/paper_images/duvenaud2.png) 
+
+### Interpretablity
+
+In order to show interpretability they show sstructures that most activate individual features
+
+**Takeaway**
+this article illustrate a new graphical data encoding scheme that competes with the circular fingerprint algorithm. Results are domain specific...
+
 ## 2016 - Deep Neural Networks for Learning Graph Representations (DNGR) - [Cao et al. 2016](https://www.aaai.org/ocs/index.php/AAAI/AAAI16/paper/download/12423/11715) 
 
 ### Key points from abstract
