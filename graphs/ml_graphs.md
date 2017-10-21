@@ -9,13 +9,13 @@ In the field of molecule feature extraction, data embeddings shouldn't always co
 * Differentiable fingerprints can be optimized to encode only relevant features.
 * similarity between fingerprint fragments
 
-![illustration](/home/noam/Pictures/paper_images/duvenaud) 
+![illustration](https://github.com/NoamGit/paper_reviews/blob/master/graphs/pictures/duvenaud.png) 
 
 ### Algorithm
 Generalized the circular fingerprint algorithm by replacing the **Hashing** with an single layer NN and **indexing** with a softmax in order to  convert an arbitrary-sized graph into a fixed-sized vector. In essence, each atom is asked to classify itself as belonging to a single category and the sum of the labels produces the final fingerprint. **Canonicalization**, or neighborhood invariance, was achieved with summation.
 There are similarities between the circular fingerprint algo and the neural one as $tanh$ can be interpreted as a hashing mechanism (with large inputs) and the sofmax and argmax as indexing.
 
-![](/home/noam/Pictures/paper_images/duvenaud2.png) 
+![alt text](https://github.com/NoamGit/paper_reviews/blob/master/graphs/pictures/duvenaud2.png) 
 
 ### Interpretablity
 
